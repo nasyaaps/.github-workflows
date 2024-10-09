@@ -1,0 +1,18 @@
+name: Extract ZIP File
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Unzip the project
+        run: |
+          sudo apt-get install unzip
+          unzip Powerpuff_WebDesign.zip -d nasyaaps/Powerpuff_WebDesign
